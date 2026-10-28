@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер</title>
+</head>
+<body>
+    <h1>КОНВЕРТЕР ВАЛЮТ</h1>
+        <input type="number" id="rub" placeholder="Введите рубли">
+    <button onclick="convert()">Перевести</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function convert() {
+            let rubInput = document.getElementById("rub").value;
+            let rub = Number(rubInput);
+            let usdRate = 92;
+            let eurRate = 100;
+            let usd = (rub / usdRate).toFixed(2);
+            let eur = (rub / eurRate).toFixed(2);
+            let resultElement = document.getElementById("result");
+            resultElement.innerText = rub + " RUB = " + usd + " USD\n" + rub + " RUB = " + eur + " EUR";
+        }
+        </script>
+</body>
+</html>
